@@ -1,0 +1,47 @@
+.pageWrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  padding: 2rem 0 2rem 2rem;
+}
+
+.sidebarFixed {
+  position: sticky;
+  top: 2rem;
+}
+
+.content {
+  flex-grow: 1;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 0;
+    order: 2;
+  }
+
+  .sidebarFixed {
+    position: static;
+  }
+
+  .content {
+    width: 100%;
+    padding: 1rem;
+  }
+}

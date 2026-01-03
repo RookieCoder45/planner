@@ -1,0 +1,78 @@
+.wrapper {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
+}
+
+.navGroup {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.yearDisplay {
+  font-size: 2rem;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.yearDisplay:hover {
+  transform: scale(1.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 1rem;
+    padding-top: 4rem;
+    /* Space for fixed settings button */
+  }
+
+  .nav {
+    padding: 0.5rem 1rem;
+    top: 0.5rem;
+  }
+
+  .settingsButton {
+    position: fixed;
+    top: 0.75rem;
+    right: 1rem;
+    z-index: 1001;
+    /* Above sticky nav and modals if needed */
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yearDisplay {
+    font-size: 1.5rem;
+  }
+}
