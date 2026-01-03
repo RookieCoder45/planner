@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import ThemeToggle from './ThemeToggle';
 import styles from './SettingsModal.module.css';
+import Link from 'next/link';
 
 interface SettingsModalProps {
     isOpen: boolean;
@@ -102,7 +103,11 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose }) => {
                             >
                                 <div className={styles.toggleKnob} />
                             </button>
+                            
                         </div>
+                            <Link href="/setup-profile">
+                        <span>Edit Profile</span>
+                        </Link>
                     </section>
                 </div>
 

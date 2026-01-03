@@ -66,6 +66,7 @@ function MonthPageContent() {
 
     return (
         <main className={styles.pageWrapper}>
+           
             <aside className={styles.sidebar}>
                 <div className={styles.sidebarFixed}>
                     <ShiftNav selectedShifts={selectedShifts} onToggle={toggleShift} />

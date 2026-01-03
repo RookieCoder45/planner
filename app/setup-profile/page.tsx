@@ -36,12 +36,12 @@ export default function ProfileSetup() {
                 router.push('/');
                 return;
             }
-
+            console.log(session.user);
             setUserId(session.user.id);
-            const fullName = session.user.user_metadata?.full_name || '';
-            const names = fullName.split(' ');
-            setFirstName(names[0] || '');
-            setLastName(names.slice(1).join(' ') || '');
+            const firstName = session.user.user_metadata?.first_name || '';
+            const lastName = session.user.user_metadata?.last_name || '';
+            setFirstName(firstName);
+            setLastName(lastName);
             setLoading(false);
         };
         getSession();
@@ -58,7 +58,7 @@ export default function ProfileSetup() {
         try {
             const { error } = await supabase
                 .from('users')
-                .insert([
+                .upsert([
                     {
                         id: userId,
                         first_name: firstName,
